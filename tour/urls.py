@@ -14,14 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from tour import views as tour_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('tour.urls')),
-    path('blog', include('blog.urls')),
+    path('', tour_views.index, name='home'),
 ]
-
-admin.site.site_header = "Mysuru Tourism"
-admin.site.site_title = "Mysuru Tourism Admin Portal"
-admin.site.index_title = "Welcome to Mysuru Tourism Researcher Portal"
