@@ -21,6 +21,8 @@ class Place(models.Model):
     place_category = models.ForeignKey(Category, on_delete=models.PROTECT)
     slug = models.SlugField(unique=True, blank=True, null=True, editable=False)
     place_location = models.CharField(max_length=500)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -19,7 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tour.urls')),
-    path('blog', include('blog.urls')),
+    path('blog/', include('blog.urls')),
+    path('volunteer/', include('volunteer.urls')),
 ]
 
 admin.site.site_header = "Mysuru Tourism"
